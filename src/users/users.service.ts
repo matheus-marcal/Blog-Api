@@ -38,4 +38,20 @@ export class UsersService {
       throw error;
     }
   }
+
+  GetbyIdUser = async (userid: string) => {
+    try {
+      const foundartigo = await this.userRepository.findOne({
+        where: {
+          id: userid,
+        },
+      });
+      if (!foundartigo) {
+        throw new HttpException('Artigo não encontrado', 404);
+      }
+      return foundartigo;
+    } catch (error) {
+      throw error;
+    }
+  };
 }

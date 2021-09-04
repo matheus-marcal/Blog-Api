@@ -63,4 +63,16 @@ export class ArtigoService {
       throw error;
     }
   };
+  GetbyCategoriaArtigo = async (categoria: string) => {
+    try {
+      const updateResponse = await this.artigoRepository.find({
+        where: {
+          Categoria: categoria,
+        },
+      });
+      return updateResponse;
+    } catch (error) {
+      throw error;
+    }
+  };
 }

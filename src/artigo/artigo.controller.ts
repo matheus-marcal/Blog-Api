@@ -38,7 +38,18 @@ export class ArtigoController {
       throw new HttpException(err.message, 400);
     }
   }
-  @Get(':id')
+  @Get(':Categoria')
+  async GetbyCategoriaArtigo(@Param('Categoria') categoria: string) {
+    try {
+      const response = await this.artigoService.GetbyCategoriaArtigo(categoria);
+      return response;
+    } catch (err) {
+      if (err instanceof HttpException) throw err;
+      throw new HttpException(err.message, 400);
+    }
+  }
+
+  @Get('/id/:id')
   async GetbyIdArtigo(@Param('id') artigoId: string) {
     try {
       const response = await this.artigoService.GetbyIdArtigo(artigoId);
