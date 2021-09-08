@@ -13,8 +13,6 @@ import { UsersService } from './users.service';
 @Controller('users')
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
-  
-  @UseGuards(JwtAuthGuard)
   @Post()
   async CreateUser(@Body() newUser) {
     try {
