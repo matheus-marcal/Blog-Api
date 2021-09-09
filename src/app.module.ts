@@ -11,15 +11,12 @@ import { UserEntity } from './users';
   imports: [
     ArtigoModule,
     TypeOrmModule.forRoot({
-      name: 'default',
       type: 'postgres',
-      host: 'ec2-52-7-159-155.compute-1.amazonaws.com',
+      host: 'localhost',
       port: 5432,
-      username: 'lshtoecdcvcsas',
-      password:
-        '710ef4217fdb71e76e7bbb95e202ceac5776b7e044c7b9ac70019a2c09aefd9f',
-      database: 'dfvsvgncmmfqu0',
-      logging: false,
+      username: 'postgres',
+      password: 'admin',
+      database: 'Blog',
       entities: [ArtigoEntity, UserEntity],
       synchronize: true,
     }),
