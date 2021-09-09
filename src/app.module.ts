@@ -12,11 +12,11 @@ import { UserEntity } from './users';
     ArtigoModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'ec2-52-7-159-155.compute-1.amazonaws.com',
       port: 5432,
-      username: 'postgres',
-      password: 'admin',
-      database: 'Blog',
+      username: 'lshtoecdcvcsas',
+      password: '710ef4217fdb71e76e7bbb95e202ceac5776b7e044c7b9ac70019a2c09aefd9f',
+      database: 'dfvsvgncmmfqu0',
       entities: [ArtigoEntity, UserEntity],
       synchronize: true,
     }),
@@ -27,3 +27,16 @@ import { UserEntity } from './users';
   providers: [AppService],
 })
 export class AppModule {}
+
+/**
+  * TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'admin',
+      database: 'Blog',
+      entities: [ArtigoEntity, UserEntity],
+      synchronize: true,
+    }),
+  */
